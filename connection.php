@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "username";
 $password = "";
-$dbname = "db_document";
+$dbname = "db_dms";
 
 $mysqli = new mysqli($servername, $username, $password, $dbname);
 
