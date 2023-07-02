@@ -15,14 +15,21 @@
                 </ul> -->
             </li>
 
-            <li class="mega-menu mega-menu-sm">
+            <!-- <li class="mega-menu mega-menu-sm">
                 <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                     <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Dokumen</span>
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="../folder-doc/indexDoc.php">Dokumen Terkawal</a></li>
                 </ul>
+            </li> -->
+
+            <li>
+                <a href="../folder-doc/indexDoc.php" aria-expanded="false">
+                    <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Dokumen Terkawal</span>
+                </a>
             </li>
+
 
             <li class="mega-menu mega-menu-sm">
                 <a class="has-arrow" href="javascript:void()" aria-expanded="false">

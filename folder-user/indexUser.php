@@ -1,7 +1,7 @@
 <html>
     <?php
 
-        // extends('../layout/index.php');
+        include $page = 'indexUser.php';
     ?>
 
 
