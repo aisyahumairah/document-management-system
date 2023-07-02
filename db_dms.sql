@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2023 at 02:25 PM
+-- Generation Time: Jul 02, 2023 at 03:33 PM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_dms`
+-- Database: `db_dbms`
 --
 
 -- --------------------------------------------------------
@@ -110,7 +110,8 @@ CREATE TABLE `tb_staff` (
   `s_email` varchar(50) NOT NULL,
   `s_password` varchar(255) NOT NULL,
   `s_jawatan` int(11) NOT NULL,
-  `s_dept` char(10) NOT NULL
+  `s_dept` char(10) NOT NULL,
+  `role` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
