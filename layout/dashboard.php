@@ -6,5 +6,5 @@ $pageTitle = "My Page Title";
 $content = "home.php";
 
 // Include the base template
-include "index.php";
+include "induk.php";
 ?>

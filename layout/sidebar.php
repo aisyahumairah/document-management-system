@@ -6,7 +6,7 @@
 
 
             <li>
-                <a href="" aria-expanded="false">
+                <a href="../layout/dashboard.php" aria-expanded="false">
                     <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                 </a>
                 <!-- <ul aria-expanded="false">
