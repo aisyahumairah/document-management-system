@@ -1,8 +1,8 @@
-<html>
-    <?php
+<?php
 
-        include $page = 'indexUser.php';
-    ?>
+// Set the content file to include
+$content = "../layout/home.php";
 
-
-</html>
+// Include the base template
+include "../layout/index.php";
+?>
