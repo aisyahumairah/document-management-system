@@ -1,19 +1,24 @@
 <?php
 // Check if username and password are correct. Username and Password already set to "php","php"
-if ($_POST["username"] == "php" && $_POST["password"] == "php") 
-{
-// If username & password is correct, we set the session to YES
- session_start(); //start the session 
- $_SESSION["Login"] = "YES";
- echo "<h1>You are now logged correctly in</h1>";
- echo "<p><a href='document.php'>Link to protected file</a><p/>";
+require_once("../connection.php");
+
+$query = "SELECT * FROM users WHERE username = '$username'";
+$result = mysqli_query($connection, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    // User exists, check password
+    $user = mysqli_fetch_assoc($result);
+    if (password_verify($password, $user['password'])) {
+        session_start(); //start the session 
+        $_SESSION["Login"] = "YES";
+        header('Location: ../connector/dashboard.php');
+        exit;
+    } else {
+        // Invalid password
+        echo 'Invalid password.';
+    }
+} else {
+    session_start();
+    $_SESSION["Login"] = "NO";
 }
-else 
-{
-// If username & password is not correct, we set the session to NO
- session_start();
- $_SESSION["Login"] = "NO";
- echo "<h1>You are NOT logged correctly in </h1>";
- echo "<p><a href='document.php'>Link to protected file</a></p>";
-}
-?>
+

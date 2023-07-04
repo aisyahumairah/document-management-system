@@ -58,7 +58,7 @@
                         <div class="dropdown-content-body">
                             <ul>
                                 <li>
-                                    <a href="../profile.php"><i class="icon-user"></i>
+                                    <a href="../connector/user/profile.php"><i class="icon-user"></i>
                                         <span>Profile</span></a>
                                 </li>
                                 <!-- <li>
@@ -73,7 +73,7 @@
                                     <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock
                                             Screen</span></a>
                                 </li> -->
-                                <li><a href=""><i class="icon-key"></i> <span>Logout</span></a>
+                                <li><a href="../authentication/logout.php"><i class="icon-key"></i> <span>Logout</span></a>
                                 </li>
                             </ul>
                         </div>
