@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2023 at 03:33 PM
+-- Generation Time: Jul 05, 2023 at 04:27 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -31,6 +31,13 @@ CREATE TABLE `tb_department` (
   `dept_code` char(10) NOT NULL,
   `dept_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_department`
+--
+
+INSERT INTO `tb_department` (`dept_code`, `dept_name`) VALUES
+('99', 'Admin');
 
 -- --------------------------------------------------------
 
@@ -62,6 +69,13 @@ CREATE TABLE `tb_jawatan` (
   `j_name` varchar(50) NOT NULL,
   `j_gred` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_jawatan`
+--
+
+INSERT INTO `tb_jawatan` (`j_id`, `j_name`, `j_gred`) VALUES
+(1, 'Admin', '99');
 
 -- --------------------------------------------------------
 
@@ -113,6 +127,13 @@ CREATE TABLE `tb_staff` (
   `s_dept` char(10) NOT NULL,
   `role` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_staff`
+--
+
+INSERT INTO `tb_staff` (`s_id`, `s_name`, `s_ic`, `s_email`, `s_password`, `s_jawatan`, `s_dept`, `role`) VALUES
+(12345, 'Admin', '0123456789012', 'admin@gmail.com', 'password', 1, '99', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -176,7 +197,7 @@ ALTER TABLE `tb_staff`
 -- AUTO_INCREMENT for table `tb_jawatan`
 --
 ALTER TABLE `tb_jawatan`
-  MODIFY `j_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `j_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tb_kategori`
