@@ -11,6 +11,10 @@ if($mysqli)
 {
     echo "Connected Successfully";
 }
-die("Connection failed: " . mysqli_connect_error());
+else
+{
+    die("Connection failed: " . mysqli_connect_error());
+}
+
 
 ?>
