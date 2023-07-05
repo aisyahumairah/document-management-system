@@ -4,5 +4,5 @@
 $content = "..home.php";
 
 // Include the base template
-include "induk.php";
+include "../layout/induk.php";
 ?>

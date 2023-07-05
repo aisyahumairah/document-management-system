@@ -2,13 +2,16 @@
 // Check if username and password are correct. Username and Password already set to "php","php"
 require_once("../connection.php");
 
-$query = "SELECT * FROM users WHERE username = '$username'";
-$result = mysqli_query($connection, $query);
+$username=$_POST['s_email'];
+$password=$_POST['s_password'];
+
+$query = "SELECT * FROM tb_staff WHERE s_email = '$username'";
+$result = mysqli_query($mysqli, $query);
 
 if ($result && mysqli_num_rows($result) > 0) {
     // User exists, check password
     $user = mysqli_fetch_assoc($result);
-    if (password_verify($password, $user['password'])) {
+    if (password_verify($password, $user['s_password'])) {
         session_start(); //start the session 
         $_SESSION["Login"] = "YES";
         header('Location: ../connector/dashboard.php');
