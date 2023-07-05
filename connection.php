@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "username";
+$username = "root";
 $password = "";
-$dbname = "db_dms";
+$dbname = "db_dbms";
 
 $mysqli = new mysqli($servername, $username, $password, $dbname);
 
