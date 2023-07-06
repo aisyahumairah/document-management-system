@@ -9,7 +9,6 @@ $mysqli = new mysqli($servername, $username, $password, $dbname);
 //check connection
 if($mysqli)
 {
-    echo "Connected Successfully";
 }
 else
 {

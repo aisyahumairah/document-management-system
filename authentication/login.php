@@ -14,7 +14,8 @@ if ($result && mysqli_num_rows($result) > 0) {
     if (password_verify($password, $user['s_password'])) {
         session_start(); //start the session 
         $_SESSION["Login"] = "YES";
-        header('Location: ../connector/dashboard.php');
+        $_SESSION['user'] = $user;
+        header('Location: ../folder-user/profile.php');
         exit;
     } else {
         // Invalid password
