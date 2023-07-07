@@ -118,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Tambah Dokumen</button>
+            <button type="submit" class="btn btn-primary">Kemaskini</button>
         </form>
     </div>
 </div>

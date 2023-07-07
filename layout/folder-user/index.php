@@ -27,9 +27,9 @@
           echo "<td>" . $row['s_dept'] . "</td>";
           echo "<td>" . $row['role'] . "</td>";
           echo '<td>';
-          echo '<a href="../folder-doc/viewUser.php?id=' . $row['s_id'] . '" class="btn mb-1 btn-rounded btn-outline-primary btn-sm mr-1">View</a>';
-          echo '<a href="../folder-Doc/editUser.php?id=' . $row['s_id'] . '" class="btn mb-1 btn-rounded btn-outline-info btn-sm mr-1">Edit</a>';
-          echo '<a href="../folder-Doc/deleteUser.php?id=' . $row['s_id'] . '" class="btn mb-1 btn-rounded btn-outline-danger btn-sm">Delete</a>';
+          echo '<a href="../folder-user/profile.php?id=' . $row['s_id'] . '" class="btn mb-1 btn-rounded btn-outline-primary btn-sm mr-1">View</a>';
+          echo '<a href="../folder-user/editUser.php?id=' . $row['s_id'] . '" class="btn mb-1 btn-rounded btn-outline-info btn-sm mr-1">Edit</a>';
+          echo '<a href="../folder-user/delete.php?id=' . $row['s_id'] . '" class="btn mb-1 btn-rounded btn-outline-danger btn-sm">Delete</a>';
           echo '</td>';
           echo "</tr>";
         }
