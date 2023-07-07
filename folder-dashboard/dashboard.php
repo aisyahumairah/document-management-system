@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if (isset($_SESSION['user'])) {
 // Set the content file to include
 $content = "../layout/home.php";

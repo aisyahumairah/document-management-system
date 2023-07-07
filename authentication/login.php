@@ -15,6 +15,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         session_start(); //start the session 
         $_SESSION["Login"] = "YES";
         $_SESSION['user'] = $user;
+        $_SESSION['username'] = $user['s_name'];
         $_SESSION['role'] = $user['role'];
         header('Location: ../folder-user/profile.php');
         exit;
