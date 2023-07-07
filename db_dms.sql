@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2023 at 04:27 PM
+-- Generation Time: Jul 07, 2023 at 03:24 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_dbms`
+-- Database: `db_dms`
 --
 
 -- --------------------------------------------------------
@@ -37,7 +37,26 @@ CREATE TABLE `tb_department` (
 --
 
 INSERT INTO `tb_department` (`dept_code`, `dept_name`) VALUES
-('99', 'Admin');
+('99', 'Admin'),
+('BKA', 'Jabatan Kesihatan Persekitaran'),
+('COB', 'Jabatan Pesuruhjaya Bangunan'),
+('KAD', 'Unit Audit Dalam'),
+('OSC', 'Unit Pusat Setempat (OSC)'),
+('PB', 'Jabatan Kawalan Bangunan'),
+('PE', 'Jabatan Penguatkuasaan'),
+('PJ', 'Jabatan Kejuruteraan'),
+('PKK', 'Jabatan Pengurusan Korporat dan Komuniti'),
+('PKP', 'Jabatan Khidmat Pengurusan'),
+('PL', 'Jabatan Pelesenan'),
+('PLK', 'Jabatan Landskap'),
+('PNH', 'Jabatan Penilaian Dan Pengurusan Harta'),
+('PP', 'Jabatan Perbendaharaan'),
+('PPP', 'Jabatan Perkhidmatan Perbandaran'),
+('PR', 'Jabatan Perancangan Pembangunan'),
+('PU', 'Unit Undang-undang'),
+('PW', 'Jabatan Konservasi Warisan'),
+('UI', 'Unit Integriti'),
+('UPP', 'Unit Penyelarasan Pembangunan');
 
 -- --------------------------------------------------------
 
@@ -54,8 +73,8 @@ CREATE TABLE `tb_document` (
   `owner_code` char(10) DEFAULT NULL,
   `d_perkhidmatan` int(11) DEFAULT NULL,
   `d_pecahan` int(11) DEFAULT NULL,
-  `d_kategori` int(11) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `d_kategori` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -75,7 +94,25 @@ CREATE TABLE `tb_jawatan` (
 --
 
 INSERT INTO `tb_jawatan` (`j_id`, `j_name`, `j_gred`) VALUES
-(1, 'Admin', '99');
+(1, 'Admin', '99'),
+(2, 'Penolong Pegawai Teknologi Maklumat', 'FA29'),
+(3, 'Pegawai Teknologi Maklumat', 'F41'),
+(4, 'Juruteknik Komputer', 'FT17'),
+(5, 'Penolong Jurutera', 'JA29'),
+(6, 'Arkitek', 'JA41'),
+(7, 'Penolong Akauntan', 'WA29'),
+(8, 'Akauntan', 'WA41'),
+(9, 'Penolong Pegawai Kesihatan Persekitaran', 'UA29'),
+(10, 'Pegawai Kesihatan Persekitaran', 'UA41'),
+(11, 'Penolong Pegawai Undang-Undang', 'LA29'),
+(12, 'Pegawai Undang-Undang', 'LA41'),
+(13, 'Pembantu Tadbir', 'NA19'),
+(14, 'Penolong Pegawai Tadbir', 'NA29'),
+(15, 'Pegawai Tadbir', 'NA41'),
+(16, 'Pegawai Perubatan', 'UD41'),
+(17, 'Juruaudit', 'W41'),
+(18, 'Penolong Juruaudit', 'W29'),
+(19, 'Jururawat', 'UA29');
 
 -- --------------------------------------------------------
 
@@ -89,6 +126,17 @@ CREATE TABLE `tb_kategori` (
   `k_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tb_kategori`
+--
+
+INSERT INTO `tb_kategori` (`k_id`, `k_code`, `k_name`) VALUES
+(1, 'PK', 'Prosedur Kerja'),
+(2, 'AK', 'Arahan Kerja'),
+(3, 'PK-PS', 'Prosedur Kerja - Proses Sokongan'),
+(4, 'PKS', 'Prosedur Kerja Selamat'),
+(5, 'PKS-PS', 'Prosedur Kerja Selamat - Proses Sokongan');
+
 -- --------------------------------------------------------
 
 --
@@ -100,6 +148,16 @@ CREATE TABLE `tb_pecahan` (
   `pecahan_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tb_pecahan`
+--
+
+INSERT INTO `tb_pecahan` (`pecahan_id`, `pecahan_name`) VALUES
+(1, 'Garis Panduan'),
+(2, 'Kawalan Bangunan'),
+(3, 'Kawalan Pemajuan'),
+(4, 'Pembersihan');
+
 -- --------------------------------------------------------
 
 --
@@ -110,6 +168,16 @@ CREATE TABLE `tb_perkhidmatan` (
   `p_id` int(11) NOT NULL,
   `p_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_perkhidmatan`
+--
+
+INSERT INTO `tb_perkhidmatan` (`p_id`, `p_name`) VALUES
+(1, 'Perkhidmatan Teras'),
+(2, 'Perkhidmatan Sokongan'),
+(3, 'Dokumen Induk'),
+(4, 'Kawalan Keselamatan');
 
 -- --------------------------------------------------------
 
@@ -133,7 +201,7 @@ CREATE TABLE `tb_staff` (
 --
 
 INSERT INTO `tb_staff` (`s_id`, `s_name`, `s_ic`, `s_email`, `s_password`, `s_jawatan`, `s_dept`, `role`) VALUES
-(12345, 'Admin', '0123456789012', 'admin@gmail.com', 'password', 1, '99', 'admin');
+(12345, 'Admin', '0123456789012', 'admin@gmail.com', '$2y$10$BMnRmdct2IQ0f5H62eX0neN2UG3eBNeMX9WRrJ/JldlX/hQ3akgNy', 1, '99', 'Admin');
 
 --
 -- Indexes for dumped tables
@@ -153,7 +221,7 @@ ALTER TABLE `tb_document`
   ADD KEY `owner_code` (`owner_code`),
   ADD KEY `d_perkhidmatan` (`d_perkhidmatan`),
   ADD KEY `d_pecahan` (`d_pecahan`),
-  ADD KEY `d_kategori` (`d_kategori`);
+  ADD KEY `fk_tb_document_tb_kategori` (`d_kategori`);
 
 --
 -- Indexes for table `tb_jawatan`
@@ -165,7 +233,8 @@ ALTER TABLE `tb_jawatan`
 -- Indexes for table `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
-  ADD PRIMARY KEY (`k_id`);
+  ADD PRIMARY KEY (`k_id`),
+  ADD KEY `k_code` (`k_code`);
 
 --
 -- Indexes for table `tb_pecahan`
@@ -197,25 +266,25 @@ ALTER TABLE `tb_staff`
 -- AUTO_INCREMENT for table `tb_jawatan`
 --
 ALTER TABLE `tb_jawatan`
-  MODIFY `j_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `j_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
-  MODIFY `k_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `k_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tb_pecahan`
 --
 ALTER TABLE `tb_pecahan`
-  MODIFY `pecahan_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pecahan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb_perkhidmatan`
 --
 ALTER TABLE `tb_perkhidmatan`
-  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -225,10 +294,10 @@ ALTER TABLE `tb_perkhidmatan`
 -- Constraints for table `tb_document`
 --
 ALTER TABLE `tb_document`
+  ADD CONSTRAINT `fk_tb_document_tb_kategori` FOREIGN KEY (`d_kategori`) REFERENCES `tb_kategori` (`k_code`),
   ADD CONSTRAINT `tb_document_ibfk_1` FOREIGN KEY (`owner_code`) REFERENCES `tb_department` (`dept_code`),
   ADD CONSTRAINT `tb_document_ibfk_2` FOREIGN KEY (`d_perkhidmatan`) REFERENCES `tb_perkhidmatan` (`p_id`),
-  ADD CONSTRAINT `tb_document_ibfk_3` FOREIGN KEY (`d_pecahan`) REFERENCES `tb_pecahan` (`pecahan_id`),
-  ADD CONSTRAINT `tb_document_ibfk_4` FOREIGN KEY (`d_kategori`) REFERENCES `tb_kategori` (`k_id`);
+  ADD CONSTRAINT `tb_document_ibfk_3` FOREIGN KEY (`d_pecahan`) REFERENCES `tb_pecahan` (`pecahan_id`);
 
 --
 -- Constraints for table `tb_staff`
