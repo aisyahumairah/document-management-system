@@ -44,14 +44,20 @@
                 </ul>
             </li>
 
+            <?php 
+                if($_SESSION['role'] == "Admin" || $_SESSION['role'] == "Super Admin")
+                {
+            ?>
             <li class="mega-menu mega-menu-sm">
                 <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                     <i class="icon-note menu-icon"></i><span class="nav-text">Konfigurasi</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="../folder-user/indexUser.php">Pengguna</a></li>
+                    <li><a href="../folder-user/index.php">Pengguna</a></li>
+                    <li><a href="../folder-user/register.php">Tambah Pengguna Baru</a></li>
                 </ul>
             </li>
+            <?php } ?>
         </ul>
     </div>
 </div>

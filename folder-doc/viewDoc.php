@@ -8,7 +8,7 @@ if (isset($_SESSION['user'])) {
     // Retrieve documents from the database
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
-        $sql = "SELECT * FROM tb_document WHERE d_code = $id";
+        $sql = "SELECT * FROM tb_document WHERE d_code = '$id'";
         $result = mysqli_query($mysqli, $sql);
 
         // Set the content file to include
@@ -22,6 +22,6 @@ if (isset($_SESSION['user'])) {
     }
 } else {
     // Redirect to login page or handle unauthorized access
-    header('Location: ../authentication/login.php');
+    header('Location: ../authentication/page-login.html');
     exit();
 }

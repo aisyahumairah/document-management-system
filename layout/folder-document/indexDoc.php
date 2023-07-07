@@ -48,8 +48,8 @@
         // Add additional table cells for other document fields as needed
         echo '<td>';
         echo '<a href="../folder-doc/viewDoc.php?id=' . $kodNo . '" class="btn mb-1 btn-rounded btn-outline-primary btn-sm mr-1">View</a>';
-        echo '<a href="edit.php?id=' . $kodNo . '" class="btn mb-1 btn-rounded btn-outline-info btn-sm mr-1">Edit</a>';
-        echo '<a href="delete.php?id=' . $kodNo . '" class="btn mb-1 btn-rounded btn-outline-danger btn-sm">Delete</a>';
+        echo '<a href="../folder-Doc/editDoc.php?id=' . $kodNo . '" class="btn mb-1 btn-rounded btn-outline-info btn-sm mr-1">Edit</a>';
+        echo '<a href="../folder-Doc/deleteDoc.php?id=' . $kodNo . '" class="btn mb-1 btn-rounded btn-outline-danger btn-sm">Delete</a>';
         echo '</td>';
         echo '</tr>';
       }

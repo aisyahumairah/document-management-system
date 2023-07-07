@@ -20,6 +20,6 @@ if (isset($_SESSION['user'])) {
     $mysqli->close();
 } else {
     // Redirect to login page or handle unauthorized access
-    header('Location: ../authentication/login.php');
+    header('Location: ../authentication/page-login.html');
     exit();
 }

@@ -15,11 +15,12 @@ if ($result && mysqli_num_rows($result) > 0) {
         session_start(); //start the session 
         $_SESSION["Login"] = "YES";
         $_SESSION['user'] = $user;
+        $_SESSION['role'] = $user['role'];
         header('Location: ../folder-user/profile.php');
         exit;
     } else {
         // Invalid password
-        echo 'Invalid password.';
+        echo 'Kata Laluan Tidak Sepadan.';
     }
 } else {
     session_start();

@@ -26,19 +26,16 @@ if (isset($_SESSION['user'])) {
             require_once("../connection.php");
 
             // Prepare the SQL statement
-            $sql = "INSERT INTO tb_document (d_code, d_name, d_file, d_tarikh_keluaran, d_catatan,
-        owner_code, d_perkhidmatan,d_pecahan, d_kategori) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            // Adjust the SQL statement and add placeholders for other form fields as needed
-
-            // Prepare and bind the parameters
+            $sql = "UPDATE tb_document SET d_name = ?, d_file = ?, d_tarikh_keluaran = ?, d_catatan = ?, owner_code = ?, d_perkhidmatan = ?, d_pecahan = ?, d_kategori = ? WHERE d_code = ?";
             $stmt = $mysqli->prepare($sql);
-            $stmt->bind_param("sssssssss", $kodNo, $tajuk, $fileName, $tarikh, $catatan, $pemilik, $perkidmatan, $pecahan, $kategori);
-            // Adjust the binding of parameters for other form fields as needed
+
+            // Bind the parameters to the statement
+            $stmt->bind_param("sssssssssi", $dCode, $dName, $dFile, $dTarikhKeluaran, $dCatatan, $ownerCode, $dPerkhidmatan, $dPecahan, $dKategori, $recordId);
 
             // Execute the statement
             if ($stmt->execute()) {
                 // Successful insertion
-                $alert = '<div class="alert alert-success">Dokumen berjaya di tambah!</div>';
+                $alert = '<div class="alert alert-success">Dokumen berjaya di kemaskini!</div>';
             } else {
                 // Error in insertion
                 $alert =
@@ -58,7 +55,7 @@ if (isset($_SESSION['user'])) {
     $url = '../folder-doc/indexDoc.php?id=' . urlencode($alert);
 
     header('Location: ' . $url);
-exit();
+    exit();
 } else {
     // Redirect to login page or handle unauthorized access
     header('Location: ../authentication/page-login.html');

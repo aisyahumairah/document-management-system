@@ -11,6 +11,5 @@ session_destroy(); //destroy the session
 
 
 // go to login page 
-header('Location: login.php'); 
-exit; 
-?> 
+header('Location: ../authentication/page-login.html');
+exit;

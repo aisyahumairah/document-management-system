@@ -58,7 +58,7 @@
                         <div class="dropdown-content-body">
                             <ul>
                                 <li>
-                                    <a href="../connector/user/profile.php"><i class="icon-user"></i>
+                                    <a href="../folder-user/profile.php"><i class="icon-user"></i>
                                         <span>Profile</span></a>
                                 </li>
                                 <!-- <li>
