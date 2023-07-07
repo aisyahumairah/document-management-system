@@ -17,7 +17,7 @@ if (isset($_SESSION['user'])) {
 
         require_once ("../connection.php");
         // Prepare the SQL statement
-        $sql = "INSERT INTO tb_staff (s_id, s_name, s_ic, s_email, s_password, s_jawatan, s_dept, 'role') VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO tb_staff (s_id, s_name, s_ic, s_email, s_password, s_jawatan, s_dept, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $mysqli->prepare($sql);
 
         // Bind the parameters to the statement

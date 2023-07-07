@@ -30,20 +30,6 @@
                 </a>
             </li>
 
-
-            <li class="mega-menu mega-menu-sm">
-                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="icon-grid menu-icon"></i><span class="nav-text">Tetapan Kod</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="../folder-doc/indexDoc.php">Kategori Dokumen</a></li>
-                    <li><a href="../folder-perkhidmatan/index-perkhidmatan.php">Perkhidmatan</a></li>
-                    <li><a href="../folder-pecahan/index-pecahan.php">Pecahan Perkhidmatan</a></li>
-                    <li><a href="../folder-jabatan/index-jabatan.php">Jabatan</a></li>
-                    <li><a href="../folder-jawatan/index-pecahan.php">Jawatan</a></li>
-                </ul>
-            </li>
-
             <?php 
                 if($_SESSION['role'] == "Admin" || $_SESSION['role'] == "Super Admin")
                 {
