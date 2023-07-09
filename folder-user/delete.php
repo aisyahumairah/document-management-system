@@ -16,11 +16,11 @@ if (isset($_SESSION['user'])) {
     // Execute the statement
     if ($stmt->execute()) {
 
-        $alert = '<div class="alert alert-success">Dokumen berjaya di padam!</div>';
+        $alert = '<div class="alert alert-success">Rekod berjaya dipadam!</div>';
     } else {
         // Error in insertion
         $alert =
-            '<div class="alert alert-danger">Dokumen gagal di padam : ' . $stmt->error . '</div>';
+            '<div class="alert alert-danger">Rekod gagal dipadam : ' . $stmt->error . '</div>';
     }
 
     // Close the statement and connection
