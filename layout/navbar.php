@@ -1,8 +1,6 @@
 <html>
 
-<!--**********************************
-            Nav header start
-        ***********************************-->
+<!--Nav header start-->
 <div class="nav-header">
             <div style="text-align: center;">
     <div class="brand-logo">
@@ -13,9 +11,7 @@
         </a>
     </div></div>
 </div>
-<!--**********************************
-            Nav header end
-        ***********************************-->
+<!--Nav header end-->
 
 <div class="header">
     <div class="header-content clearfix">
@@ -28,21 +24,6 @@
 
         <div class="header-right">
             <ul class="clearfix">
-
-
-                <!-- <li class="icons dropdown d-none d-md-flex">
-                    <a href="javascript:void(0)" class="log-user" data-toggle="dropdown">
-                        <span>Bahasa Malaysia</span> <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
-                    </a>
-                    <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
-                        <div class="dropdown-content-body">
-                            <ul>
-                                <li><a href="javascript:void()">Bahasa Malaysia</a></li>
-                                <li><a href="javascript:void()">English</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </li> -->
                 <li class="icons dropdown">
                     <div class="user-img c-pointer position-relative" data-toggle="dropdown">
                         <!-- <span class="activity active"></span> -->
@@ -60,18 +41,8 @@
                                     <a href="../folder-user/profile.php"><i class="icon-user"></i>
                                         <span>Profile</span></a>
                                 </li>
-                                <!-- <li>
-                                    <a href="javascript:void()">
-                                        <i class="icon-envelope-open"></i> <span>Inbox</span>
-                                        <div class="badge gradient-3 badge-pill gradient-1">3</div>
-                                    </a>
-                                </li> -->
 
                                 <hr class="my-2">
-                                <!-- <li>
-                                    <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock
-                                            Screen</span></a>
-                                </li> -->
                                 <li><a href="../authentication/logout.php"><i class="icon-key"></i> <span>Logout</span></a>
                                 </li>
                             </ul>
@@ -82,5 +53,4 @@
         </div>
     </div>
 </div>
-
 </html>
